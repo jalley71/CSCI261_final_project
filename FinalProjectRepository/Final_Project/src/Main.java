@@ -5,7 +5,8 @@ public class Main {
 	Income Income = new Income(); //Creates New Income Class
 	
 	Income.setemploymentDuration(9); //Duration of employment. Ex) 9 (weeks) 2.5 (days)
-	Income.setemploymentdurationType("W"); //What unit is being used to measure this
+	Income.setemploymentdurationType("W"); //What unit is being used to measure this "H" Hours 
+										//"D"Days, "W" Weeks, "M" Months, "S" Summer
 	
 	Income.setpayType("H"); //What is your pay measured in Hours? Days? Weeks? Months? Summer?
 	Income.setpay(19); //How much are you paid per hour, per day, per summer...
