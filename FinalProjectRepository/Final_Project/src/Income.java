@@ -1,9 +1,12 @@
 
 public class Income {
 	
+	private final double pay;
+	private final String payType;
+	
 	public double summerIncome;
-	public int hoursWorked;
-	public int hourlyIncome;
+	public final double hoursWorked;
+	public final double hourlyPay;
 	
 	/**
 	 * Possible inputs for Duration: Month(M), Day(D), Week(W)
@@ -14,7 +17,10 @@ public class Income {
 	 * Sets up input for income for use-able calculations
 	 */
 	public Income(){
-		summerIncome = 0;
+		hoursWorked = 0;
+		hourlyPay = 0;
+		payType = "H";
+		pay = 0;
 	}
 	/**
 	 * 
@@ -25,7 +31,7 @@ public class Income {
 	 * @param hourperDay: How many hours do you work each day?
 	 */
 	
-	public Income(String payPeriod, String payType, double pay, double payDuration, int hourperDay){
+	public void setsummerIncome(String payPeriod, String payType, double pay, double payDuration, int hourperDay){
 		if (payType == "S"){
 			summerIncome = pay;
 		}
