@@ -1,8 +1,13 @@
 
 public class Income {
 	
-	private final double pay;
-	private final String payType;
+	private double payDuration;
+	private double pay;
+	private double hoursperDay;
+	
+	private String payType;
+	private String payPeriod;
+	
 	
 	public double summerIncome;
 	public final double hoursWorked;
@@ -22,6 +27,22 @@ public class Income {
 		payType = "H";
 		pay = 0;
 	}
+	public void setpayDuration(double Duration){
+		this.payDuration = Duration;
+	}
+	public void setpayType(String typeofPay){
+		this.payType = typeofPay;
+	}
+	public void setpay(double Wage){
+		this.pay = Wage;
+	}
+	public void setpayPeriod(String paymentPeriod){
+		this.payPeriod = paymentPeriod;
+	}
+	public void sethoursperDay(double hourperday){
+		this.hoursperDay = hourperday;
+	}
+	
 	/**
 	 * 
 	 * @param payPeriod: Are you measuring the time you pay in Month Week Day or Hour, E.g 2.5 months, 4 weeks
@@ -31,75 +52,86 @@ public class Income {
 	 * @param hourperDay: How many hours do you work each day?
 	 */
 	
-	public void setsummerIncome(String payPeriod, String payType, double pay, double payDuration, int hourperDay){
+	public double getsummerIncome(){
 		if (payType == "S"){
 			summerIncome = pay;
+			return summerIncome;
 		}
 		if (payPeriod =="M"){
 			if (payType =="M"){
 				summerIncome = pay*payDuration;
+				return summerIncome;
 			}	
 			if (payType =="W"){
 				summerIncome = (payDuration * 4)*pay;
+				return summerIncome;
 			}
 			if (payType =="D"){
 				summerIncome = (payDuration * 4 * 5)*pay;
+				return summerIncome;
 			}
 			if (payType =="H"){
-				summerIncome = (payDuration * 4 * 5 * hourperDay)*pay;
+				summerIncome = (payDuration * 4 * 5 * hoursperDay)*pay;
+				return summerIncome;
 			}
 		}
 		if (payPeriod =="W"){
 			if (payType =="M"){
 				summerIncome = (payDuration / 4)*pay;
+				return summerIncome;
 			}
 			if (payType =="W"){
 				summerIncome = (payDuration)*pay;
+				return summerIncome;
 			}
 			if (payType =="D"){
 				summerIncome = (payDuration * 5)*pay;
+				return summerIncome;
 			}
 			if (payType =="H"){
-				summerIncome = (payDuration * 5 * hourperDay)*pay;
+				summerIncome = (payDuration * 5 * hoursperDay)*pay;
+				return summerIncome;
 			}
 		}
 		if (payPeriod =="D"){
 			if (payType =="M"){
 				summerIncome = (payDuration / (4 * 5) )*pay;
+				return summerIncome;
 			}
 			if (payType =="W"){
 				summerIncome = (payDuration / 5)*pay;
+				return summerIncome;
 			}
 			if (payType =="D"){
 				summerIncome = (payDuration)*pay;
+				return summerIncome;
 			}
 			if (payType =="H"){
-				summerIncome = (payDuration*hourperDay)*pay;
+				summerIncome = (payDuration*hoursperDay)*pay;
+				return summerIncome;
 			}
 			
 		}
 		if (payPeriod =="H"){
 			if (payType =="M"){
-				summerIncome = (payDuration / (4 * 5* hourperDay) )*pay;
+				summerIncome = (payDuration / (4 * 5* hoursperDay) )*pay;
+				return summerIncome;	
 			}
 			if (payType =="W"){
-				summerIncome = (payDuration / (5 * hourperDay) )*pay;
+				summerIncome = (payDuration / (5 * hoursperDay) )*pay;
+				return summerIncome;
 			}
 			if (payType =="D"){
-				summerIncome = (payDuration / hourperDay)*pay;
+				summerIncome = (payDuration / hoursperDay)*pay;
+				return summerIncome;
 			}
 			if (payType =="H"){
 				summerIncome = (payDuration)*pay;
+				return summerIncome;
 			}
 		}
-		
+	return summerIncome;
 	}
-
-	public double getSummerIncome(){
-		return summerIncome;
-	}
-	
-
 }
 
 
