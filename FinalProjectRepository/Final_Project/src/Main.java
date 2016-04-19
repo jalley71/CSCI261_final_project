@@ -1,4 +1,3 @@
-
 public class Main {
 	public static void main(String[] args) {
 	
@@ -16,5 +15,10 @@ public class Main {
 	System.out.println(Income.getsummerIncome());
 
 	}
-
+		
+	/*UserInfo.setUserState();
+	System.out.print(UserInfo.stateAbbr);
+	Transportation.importGasPrices();
+	Transportation.setGasPrice();
+	}*/
 }
