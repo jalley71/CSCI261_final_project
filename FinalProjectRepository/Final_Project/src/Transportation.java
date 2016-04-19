@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Transportation {
@@ -24,7 +25,7 @@ public class Transportation {
 			gasPrice[i] = Double.parseDouble(tokens[1]);
 		}
 	}
-	
+	scanner.close();
 		
 	}
 }
