@@ -13,6 +13,10 @@ public class Main {
 	Income.sethoursperDay(8); //How many hours do you expect to work? (Type any number unless you are paid on an hourly basis)
 	
 	System.out.println(Income.getsummerIncome());
+	
+	Transportation Transportation = new Transportation();
+	Transportation.setGasPrice();
+	
 
 	}
 		

@@ -4,13 +4,21 @@ import java.util.Scanner;
 
 public class Transportation{
 	
-	public static double userGasPrice = 0.0;
+	public double userGasPrice = 0.0;
 	
-	private static String stateAbbr = UserInfo.stateAbbr;
-	private static String[] gasState = new String[50];
-	private static double[] gasPrice = new double[50];
+	private String stateAbbr = UserInfo.stateAbbr;
+	private int weeksWorked = UserInfo.weeksWorked;
 	
-	public static void importGasPrices()throws IOException{	
+	private String[] gasState = new String[50];
+	private double[] gasPrice = new double[50];
+	
+	private int gasMileage = 0;
+	private static int avgGasTankCapacity = 12;
+	private int commuteDist = 0;
+	private int totalCommuteDist = 0;
+	public double transportationCost = 0.0;
+	
+	public void importGasPrices()throws IOException{	
 		FileInputStream inputStream = new FileInputStream("GasPrices.txt");
 		
 		Scanner scanner = new Scanner(inputStream);
@@ -31,7 +39,7 @@ public class Transportation{
 		scanner.close();	
 	}
 	
-	public static double setGasPrice(){
+	public double setGasPrice(){
 		int j = 0;
 		for (j = 0; j < 50; ++j){
 			if (gasState[j].equals(stateAbbr)) {
@@ -42,4 +50,25 @@ public class Transportation{
 		return userGasPrice;
 	}
 	
+	public int setGasMileage(){
+		Scanner scnr = new Scanner(System.in);
+		System.out.println("Enter the gas mileage of the car you will be using this summer: ");
+		gasMileage = scnr.nextInt();
+		scnr.close();
+		return gasMileage;
+	}
+	
+	public int setCommuteDistance(){
+		Scanner scnr = new Scanner(System.in);
+		System.out.println("Enter the distance (to the nearest mile) of the commute to your summer job: ");
+		commuteDist = scnr.nextInt();
+		scnr.close();
+		totalCommuteDist = (2 * weeksWorked * commuteDist);
+		return totalCommuteDist;
+	}
+	
+	public double getTransportationCost() {
+		transportationCost = (userGasPrice * gasMileage * avgGasTankCapacity * totalCommuteDist);
+		return transportationCost;
+	}
 }
