@@ -39,7 +39,7 @@ public class Transportation{
 		scanner.close();	
 	}
 	
-	public double setGasPrice(){
+	public double getGasPrice(){
 		int j = 0;
 		for (j = 0; j < 50; ++j){
 			if (gasState[j].equals(stateAbbr)) {
@@ -50,7 +50,7 @@ public class Transportation{
 		return userGasPrice;
 	}
 	
-	public int setGasMileage(){
+	public int getGasMileage(){
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("Enter the gas mileage of the car you will be using this summer: ");
 		gasMileage = scnr.nextInt();
@@ -58,7 +58,7 @@ public class Transportation{
 		return gasMileage;
 	}
 	
-	public int setCommuteDistance(){
+	public int getCommuteDistance(){
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("Enter the distance (to the nearest mile) of the commute to your summer job: ");
 		commuteDist = scnr.nextInt();
