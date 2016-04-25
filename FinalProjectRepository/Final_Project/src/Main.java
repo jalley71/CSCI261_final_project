@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 	
 	Income Income = new Income(); //Creates New Income Class
 	
@@ -13,16 +15,23 @@ public class Main {
 	Income.sethoursperDay(8); //How many hours do you expect to work? (Type any number unless you are paid on an hourly basis)
 	
 	System.out.println(Income.getsummerIncome());
+		
+	/*UserInfo UserInfo = new UserInfo();
+	UserInfo.setUserState();
+	UserInfo.setWeeksWorked();
+	
+	Housing Housing = new Housing();
+	Housing.getHousingDuration();
+	Housing.getPaymentPeriod();
+	Housing.getHousingCost();
 	
 	Transportation Transportation = new Transportation();
-	Transportation.setGasPrice();
-	
-
-	}
-		
-	/*UserInfo.setUserState();
-	System.out.print(UserInfo.stateAbbr);
 	Transportation.importGasPrices();
-	Transportation.setGasPrice();
-	}*/
+	Transportation.getGasPrice();
+	Transportation.getGasMileage();
+	Transportation.getCommuteDistance();
+	Transportation.getTransportationCost();*/
+	
+	
+	}
 }

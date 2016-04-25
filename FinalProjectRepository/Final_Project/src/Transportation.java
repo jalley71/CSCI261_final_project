@@ -7,15 +7,15 @@ public class Transportation{
 	public double userGasPrice = 0.0;
 	
 	private String stateAbbr = UserInfo.stateAbbr;
-	private int weeksWorked = UserInfo.weeksWorked;
+	private double weeksWorked = UserInfo.weeksWorked;
 	
 	private String[] gasState = new String[50];
 	private double[] gasPrice = new double[50];
 	
 	private int gasMileage = 0;
 	private static int avgGasTankCapacity = 12;
-	private int commuteDist = 0;
-	private int totalCommuteDist = 0;
+	private double commuteDist = 0.0;
+	private double totalCommuteDist = 0.0;
 	public double transportationCost = 0.0;
 	
 	public void importGasPrices()throws IOException{	
@@ -58,10 +58,11 @@ public class Transportation{
 		return gasMileage;
 	}
 	
-	public int getCommuteDistance(){
+	public double getCommuteDistance(){
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("Enter the distance (to the nearest mile) of the commute to your summer job: ");
-		commuteDist = scnr.nextInt();
+		String commuteDistString = scnr.nextLine();
+		commuteDist = Double.parseDouble(commuteDistString);
 		scnr.close();
 		totalCommuteDist = (2 * weeksWorked * commuteDist);
 		return totalCommuteDist;
