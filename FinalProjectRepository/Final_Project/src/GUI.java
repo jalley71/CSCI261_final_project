@@ -44,7 +44,7 @@ public class GUI extends JFrame {
 	private JTextField payperiod;
 	private JTextField housingduration;
 	private JTextField housingcost;
-	private JTextField carmileage;
+	private JTextField gasmileage;
 	private JTextField transportationdistance;
 	private JTextField grossIncome;
 	private JTextField netIncome;
@@ -58,9 +58,9 @@ public class GUI extends JFrame {
 	private double Pay;
 	private double pay_period;
 	
-	private String state_tax;
-	private String state_work;
-	
+	private String state_tax = "";
+	private String state_work = "";
+		
 	private String net_income ;
 	private String total_income ;
 	private double gross_income;
@@ -184,9 +184,9 @@ public class GUI extends JFrame {
 		JLabel lblPleaseSelectThe = new JLabel("Car Gas Mileage:");
 		getContentPane().add(lblPleaseSelectThe, "cell 3 22");
 		
-		carmileage = new JTextField();
-		getContentPane().add(carmileage, "cell 5 22,growx");
-		carmileage.setColumns(10);
+		gasmileage = new JTextField();
+		getContentPane().add(gasmileage, "cell 5 22,growx");
+		gasmileage.setColumns(10);
 		
 		JLabel lblMpg = new JLabel("MPG");
 		lblMpg.setFont(new Font("Tahoma", Font.ITALIC, 12));
@@ -212,6 +212,8 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				Income Income = new Income();
+				Transportation Transportation = new Transportation();
+				
 				
 				/**
 				 * Sets up Variables to use in formulas
@@ -227,17 +229,30 @@ public class GUI extends JFrame {
 				String state_work = String.valueOf(statework.getSelectedItem());
 				String state_tax = String.valueOf(statetax.getSelectedItem());
 				
+				double transportation_distance = Double.parseDouble(transportationdistance.getText());
+				double gas_mileage = Double.parseDouble(gasmileage.getText());
+				
 				Income.setemploymentDuration(pay_period);
 				Income.setemploymentdurationType(pay_duration);
 				Income.sethoursperDay(hours_worked);
+				
+				/**
+				Transportation.setstateAbbr(state_work);
+				double gas_price = Transportation.getGasPrice();
 				
 				Income.setpay(Pay);
 				Income.setpayType(pay_type);
 				
 				double gross_income = Income.getsummerIncome();
+				double transportation_cost = ((long)(gas_price * 1000)
+						*((long)(gas_mileage * 1000)) 
+						*(long)(transportation_distance * 1000)
+						*(long)(pay_period * 1000))/1000;
+				*/
 				
 				grossIncome.setText(Double.toString(gross_income));
 				
+				//transportationcost.setText(Double.toString(transportation_cost));
 			}
 		}
 		);

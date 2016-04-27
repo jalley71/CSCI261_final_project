@@ -18,6 +18,7 @@ public class Main {
         window.setVisible(true);	
 	
 	Income Income = new Income(); //Creates New Income Class
+	Transportation Transportation = new Transportation();
 	
 	Income.setemploymentDuration(9); //Duration of employment. Ex) 9 (weeks) 2.5 (days)
 	Income.setemploymentdurationType("W"); //What unit is being used to measure this "H" Hours 
