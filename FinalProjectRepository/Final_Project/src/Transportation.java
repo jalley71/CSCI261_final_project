@@ -20,7 +20,6 @@ public class Transportation{
 	
 	public void importGasPrices()throws IOException{	
 		FileInputStream inputStream = new FileInputStream("GasPrices.txt");
-		
 		Scanner scanner = new Scanner(inputStream);
 		
 		String[] inputFromFile = new String[50];
@@ -36,7 +35,7 @@ public class Transportation{
 			}
 		}
 		inputStream.close();
-		scanner.close();	
+		scanner.close();
 	}
 	
 	public double getGasPrice(){
@@ -51,20 +50,20 @@ public class Transportation{
 	}
 	
 	public int getGasMileage(){
-		Scanner scnr = new Scanner(System.in);
+		Scanner scnr1 = new Scanner(System.in);
 		System.out.println("Enter the gas mileage of the car you will be using this summer: ");
-		gasMileage = scnr.nextInt();
-		scnr.close();
+		gasMileage = scnr1.nextInt();
+		scnr1.close();
 		return gasMileage;
 	}
 	
 	public double getCommuteDistance(){
-		Scanner scnr = new Scanner(System.in);
+		Scanner scnr2 = new Scanner(System.in);
 		System.out.println("Enter the distance (to the nearest mile) of the commute to your summer job: ");
-		String commuteDistString = scnr.nextLine();
+		String commuteDistString = scnr2.nextLine();
 		commuteDist = Double.parseDouble(commuteDistString);
-		scnr.close();
 		totalCommuteDist = (2 * weeksWorked * commuteDist);
+		scnr2.close();
 		return totalCommuteDist;
 	}
 	
