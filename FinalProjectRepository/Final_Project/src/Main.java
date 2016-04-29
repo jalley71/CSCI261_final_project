@@ -40,7 +40,6 @@ public class Main {
 	Housing.getPaymentPeriod();
 	Housing.getHousingCost();
 	
-	Transportation Transportation = new Transportation();
 	Transportation.importGasPrices();
 	Transportation.getGasPrice();
 	Transportation.getGasMileage();

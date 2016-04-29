@@ -209,7 +209,7 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				Income Income = new Income();
-				//Transportation Transportation = new Transportation();
+				Transportation Transportation = new Transportation();
 				Tax Tax = new Tax();
 				Housing Housing = new Housing();
 				
@@ -230,8 +230,8 @@ public class GUI extends JFrame {
 				String state_work = String.valueOf(statework.getSelectedItem());
 				String state_tax = String.valueOf(statetax.getSelectedItem());
 				
-				//double transportation_distance = Double.parseDouble(transportationdistance.getText());
-				//double gas_mileage = Double.parseDouble(gasmileage.getText());
+				double transportation_distance = Double.parseDouble(transportationdistance.getText());
+				double gas_mileage = Double.parseDouble(gasmileage.getText());
 				
 				Income.setemploymentDuration(pay_period);
 				Income.setemploymentdurationType(pay_duration);
@@ -242,10 +242,14 @@ public class GUI extends JFrame {
 				Housing.sethousingDuration(housing_duration);
 					
 				
-				//Transportation.setstateAbbr(state_work);
-				//double gas_price = Transportation.getGasPrice();
-				double housing_cost = Housing.gethousingCost(); //Finish This
-				double transportation_cost = 0;
+				Transportation.setstateAbbr(state_work);
+				Transportation.setGasMileage(gas_mileage);
+				Transportation.getGasPrice();
+				Transportation.setCommuteDistance(transportation_distance);
+				Transportation.setCommuteWeeks(housing_duration);
+				
+				double housing_cost = Housing.gethousingCost(); //Finish This 
+				double transportation_cost = Transportation.getTransportationCost();
 				
 				Income.setpay(Pay);
 				Income.setpayType(pay_type);
@@ -259,7 +263,7 @@ public class GUI extends JFrame {
 				double net_income = gross_income - state_tax_paid - federal_tax_paid;
 				double income_left = net_income - housing_cost - transportation_cost;
 				
-				//transportationcost.setText(Double.toString(transportation_cost));
+				transportationcost.setText(Double.toString(transportation_cost));
 				
 				statetaxpaid.setText(Double.toString(state_tax_paid));
 				federaltaxpaid.setText(Double.toString(federal_tax_paid));
