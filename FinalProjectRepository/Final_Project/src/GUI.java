@@ -121,7 +121,7 @@ public class GUI extends JFrame {
 		JLabel lblPleaseSelectYour = new JLabel("Please Select Your Salary/Wage:");
 		getContentPane().add(lblPleaseSelectYour, "cell 3 8,alignx trailing");
 		
-		pay = new JTextField();
+		pay = new JTextField("0.00");
 		getContentPane().add(pay, "cell 5 8,growx");
 		pay.setColumns(10);
 		
@@ -132,12 +132,12 @@ public class GUI extends JFrame {
 		JLabel lblPleaseEnterHow = new JLabel("Please Enter How Long You Will Be Working:");
 		getContentPane().add(lblPleaseEnterHow, "cell 3 10,alignx trailing");
 		
-		payperiod = new JTextField();
+		payperiod = new JTextField("0.00");
 		getContentPane().add(payperiod, "cell 5 10,growx");
 		payperiod.setColumns(10);
 		
 		JComboBox payduration = new JComboBox();
-		payduration.setModel(new DefaultComboBoxModel(new String[] {"H", "D", "W", "M", "S"}));
+		payduration.setModel(new DefaultComboBoxModel(new String[] {"W", "H", "D", "M", "S"}));
 		getContentPane().add(payduration, "cell 6 10,growx");
 		
 		JLabel lblNewLabel = new JLabel("How Many Hours Will You Work Each Day:");
@@ -155,14 +155,14 @@ public class GUI extends JFrame {
 		JLabel lblHowManyWeeks = new JLabel("How Many Weeks are You Renting:");
 		getContentPane().add(lblHowManyWeeks, "cell 3 16,alignx right");
 		
-		housingduration = new JTextField();
+		housingduration = new JTextField("0.00");
 		getContentPane().add(housingduration, "cell 5 16,growx");
 		housingduration.setColumns(10);
 		
 		JLabel lblHowMuchWill = new JLabel("What is Your Rent:");
 		getContentPane().add(lblHowMuchWill, "cell 3 18,alignx right");
 		
-		housingrent = new JTextField();
+		housingrent = new JTextField("0.00");
 		getContentPane().add(housingrent, "cell 5 18,growx");
 		housingrent.setColumns(10);
 		
@@ -181,7 +181,7 @@ public class GUI extends JFrame {
 		JLabel lblPleaseSelectThe = new JLabel("Car Gas Mileage:");
 		getContentPane().add(lblPleaseSelectThe, "cell 3 22");
 		
-		gasmileage = new JTextField();
+		gasmileage = new JTextField("0.00");
 		getContentPane().add(gasmileage, "cell 5 22,growx");
 		gasmileage.setColumns(10);
 		
@@ -192,7 +192,7 @@ public class GUI extends JFrame {
 		JLabel lblTransportationDistance = new JLabel("Transportation Distance:");
 		getContentPane().add(lblTransportationDistance, "cell 3 24");
 		
-		transportationdistance = new JTextField();
+		transportationdistance = new JTextField("0.00");
 		getContentPane().add(transportationdistance, "cell 5 24,growx");
 		transportationdistance.setColumns(10);
 		
