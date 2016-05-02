@@ -6,12 +6,12 @@ import java.util.HashMap;
 
 public class Transportation{
 	
-	private double userGasPrice;
+	private double userGasPrice =0.00;
 	private String stateAbbr;
-	private double gasMileage;
-	private double commuteDistance;
-	private double weeksWorked;
-	public double transportationCost;
+	private double gasMileage = 0.00;
+	private double commuteDistance = 0.00;
+	private double weeksWorked = 0.00;
+	public double transportationCost = 0.00;
 	
 		
 	public void setstateAbbr(String state){
